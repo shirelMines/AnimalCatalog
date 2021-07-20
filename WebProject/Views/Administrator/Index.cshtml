@@ -1,0 +1,61 @@
+﻿@model WebProject.Models.Category
+
+@{
+    ViewBag.Title = "Administrator";
+}
+
+<h1>Administrator</h1>
+
+<table class="formTable">
+
+    <tr>
+        <td> <h1 id="titleCatagory">Select a catagory:</h1></td>
+        <td>
+            <form asp-action="CategorySort" asp-controller="Administrator" method="post">
+                <select id="select" asp-for="@Model.CategoryId">
+                    @foreach (var catagory in ViewBag.Categories)
+                    {
+                        <option value="@catagory.CategoryId">@catagory.NameCategory</option>
+                    }
+                </select>
+                <input id="btn" type="submit" value="Submit" />
+            </form>
+        </td>
+        <td>
+            <button id="btnAddNewAnimal" onclick="location.href='@Url.Action("AddNewAnimalPage","Administrator")'">Add new animal</button>
+        </td>
+    </tr>
+</table>
+
+
+<table class="table1">
+    <tr>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    @foreach (var animal in ViewBag.data)
+    {
+        <tr>
+            <td><img src="~/Images/@animal.PictureName" width="200" height="150" /></td>
+            <td>@animal.Name</td>
+            <td>@animal.Age</td>
+            <td>@animal.Description</td>
+            <td>
+                <button id="btn" onclick="location.href='@Url.Action("EditPage", "Administrator", new { animalId = @animal.AnimalId })'">Edit</button>
+            </td>
+            <td>
+                <button id="btn" onclick="location.href='@Url.Action("DeleteAnimal", "Administrator", new { animalId = @animal.AnimalId })'">Delete</button>
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+
+
+

@@ -1,0 +1,158 @@
+﻿body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    font-size: 25px;
+    margin: 30px;
+}
+
+.menu {
+    overflow: hidden;
+    background-color:  darkseagreen;
+}
+
+    .menu a {
+        float: left;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+        .menu a:hover {
+            color: black;
+        }
+
+        .menu a:checked {
+            color: black;
+        }
+
+
+.table1 {
+   border-collapse:collapse;
+    width: 60%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+th, td {
+    text-align: center;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color:#ecebeb;
+}
+
+th {
+    background-color: #381d12;
+    color: white;
+}
+
+#table2 {
+    border-collapse: collapse;
+    width: auto;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    
+}
+
+#btn {
+    width: 100px;
+    height: 30px;
+    border-color:gray;
+    border-width: 4px;
+    border-radius: 6px;
+    background: white;
+}
+
+#btnAddNewAnimal {
+    width: 150px;
+    height: 30px;
+    border-color: gray;
+    border-width: 4px;
+    border-radius: 6px;
+    background: white;
+}
+
+#select {
+    width: 100px;
+    height: 30px;
+}
+
+#titleCatagory{
+    font-size:17px;
+}
+
+
+#wrapper {
+text-align:center;
+}
+
+#table2 {
+    display: inline-block;
+}
+
+#comments {
+    display: inline-block;
+    overflow: scroll;
+    width: 250px;
+    height: 300px;
+}
+
+#addComments {
+    text-align: center;
+}
+
+.formTable {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding-bottom: 50px;
+}
+
+    .formTable tr {
+        background-color: #ecebeb;
+    }
+
+    .formTable td {
+        height: 20px;
+    }
+
+#divBtnEdit{
+    text-align:center;
+    margin:20px;
+}
+
+#tableEdit {
+    border-collapse: collapse;
+    width: 40%;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+#divValid {
+    margin-left: auto;
+    margin-right: auto;
+    width: 18%;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+}

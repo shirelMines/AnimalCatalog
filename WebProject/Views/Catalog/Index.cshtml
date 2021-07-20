@@ -1,0 +1,43 @@
+﻿@model WebProject.Models.Category
+
+@{
+    ViewBag.Title = "Cataloge";
+}
+
+<h1>Pets Catalog</h1>
+<table class="formTable">
+
+    <tr>
+        <td> <h1 id="titleCatagory" for="catagory">Select a catagory:</h1></td>
+        <td>
+            <form asp-action="CategorySort" asp-controller="Catalog" method="post">
+                <select id="select" asp-for="@Model.CategoryId">
+                    @foreach (var catagory in ViewBag.Categories)
+                    {
+                        <option value="@catagory.CategoryId">@catagory.NameCategory</option>
+                    }
+                </select>
+                <input id="btn" type="submit" value="Submit" />
+            </form>
+        </td>
+    </tr>
+</table>
+
+
+<table class="table1">
+    <tr>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>Find out more</th>
+    </tr>
+    @foreach (var animal in ViewBag.data)
+    {
+        <tr>
+            <td><img src="~/Images/@animal.PictureName" width="200" height="150" /></td>
+            <td>@animal.Name</td>
+            <td>
+                <button id="btn" onclick="location.href='@Url.Action("ShowAnimalDetails","Catalog",new {animalId= @animal.AnimalId })'">Details</button>
+            </td>
+        </tr>
+    }
+</table>

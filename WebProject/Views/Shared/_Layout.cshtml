@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/StyleSheet1.css" rel="stylesheet" asp-append-version="true" />
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div id="title" >
+        <img src="~/Images/petShop.png" width="550" height="150"/>
+    </div>
+
+    <div class="menu">
+        <a asp-controller="Home" asp-action="Index">Home</a>
+        <a asp-controller="Catalog" asp-action="Index">Catalog</a>
+        <a asp-controller="Administrator" asp-action="Index">Administrator</a>
+     
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <br /><br />
+</body>
+</html>

@@ -1,0 +1,59 @@
+﻿@model WebProject.Models.Animal
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h1>Edit Animal</h1>
+<div id="divEdit">
+    <form asp-action="SubmitEdit" asp-controller="Administrator" asp-route-animalId="@Model.AnimalId" method="post">
+        <div id="divValid" asp-validation-summary="All"></div>
+        <table id="tableEdit">
+            <tr>
+                <td>
+                    <label asp-for="Name"></label>
+                </td>
+                <td>
+                    <input type="text" asp-for="Name" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Age"></label>
+                </td>
+                <td>
+                    <input type="number" asp-for="Age" required />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Description"></label>
+                </td>
+                <td>
+                    <textarea asp-for="Description" required ></textarea>
+                  
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label asp-for="Category"></label>
+                </td>
+                <td>
+                    <select id="select" asp-for="@Model.Category.CategoryId">
+                        @foreach (var catagory in ViewBag.Categories)
+                        {
+                            <option value="@catagory.CategoryId">@catagory.NameCategory</option>
+                        }
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div id="divBtnEdit">
+            <input id="btn" type="submit" value="Edit" />
+        </div>
+    </form>
+</div>
+
+
+
+
+

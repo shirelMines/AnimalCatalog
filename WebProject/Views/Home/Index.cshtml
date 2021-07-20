@@ -1,0 +1,29 @@
+﻿@model IEnumerable<WebProject.Models.Animal>
+
+@{
+    ViewBag.Title = "WELCOME";
+}
+
+
+    <h1>The two most highly rated pets for today </h1>
+
+
+<table class="table1">
+    <tr>
+        <th>Picture</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Number of comments</th>
+    </tr>
+    @foreach (var animal in @Model)
+    {
+        <tr>
+            <td><img src="~/Images/@animal.PictureName" width="200" height="150" /></td>
+            <td>@animal.Name</td>
+            <td>@animal.Age</td>
+            <td>@animal.Comment.Count</td>
+        </tr>
+    }
+</table>
+
+
